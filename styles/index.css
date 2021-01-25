@@ -1,0 +1,384 @@
+* {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+}
+
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+}
+
+.navBox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 25px;
+}
+
+.navBox img {
+  height: 30px;
+}
+
+#navLinks {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+#navLinks ul {
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#navLinks a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+#navLinks a:hover {
+  color: grey;
+}
+
+#navLinks svg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1em;
+}
+
+@media (min-width: 1024px) {
+  #navLinks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #navLinks ul {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 1em 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+.container {
+  -webkit-animation: backgroundBreath 30s ease-in-out infinite alternate;
+          animation: backgroundBreath 30s ease-in-out infinite alternate;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Crimson Text', serif;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section h1 {
+  font-size: 3em;
+}
+
+@media (min-width: 1024px) {
+  section h1 {
+    font-size: 4em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hideDesktop {
+    display: none;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.landing .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50vh;
+}
+
+.landing .title h1 {
+  padding-top: 5em;
+  width: 40%;
+  text-align: right;
+}
+
+@media (min-width: 1024px) {
+  .landing .title h1 {
+    width: 50%;
+  }
+}
+
+.landing .title #usecaseCycle {
+  text-align: left;
+  padding-left: 0.5em;
+  width: 60%;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+@media (min-width: 1024px) {
+  .landing .title #usecaseCycle {
+    width: 50%;
+  }
+}
+
+.landing .content {
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.glassCard {
+  width: 80%;
+  text-align: justify;
+  background-color: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 1em;
+  border-radius: 20px;
+}
+
+@media (min-width: 1024px) {
+  .glassCard {
+    width: 50%;
+  }
+}
+
+.hide {
+  opacity: 0 !important;
+}
+
+.contact h1 {
+  height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact form {
+  height: 70vh;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact form input, .contact form select, .contact form textarea {
+  height: 10%;
+  margin: 1em 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: none;
+  color: white;
+}
+
+.contact form option {
+  color: black;
+}
+
+.contact form textarea {
+  height: 20%;
+}
+
+.contact form label {
+  margin-top: 1em;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-webkit-keyframes backgroundBreath {
+  from {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  to {
+    background-color: rgba(63, 82, 105, 0.2);
+  }
+}
+
+@keyframes backgroundBreath {
+  from {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  to {
+    background-color: rgba(63, 82, 105, 0.2);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeBlink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeBlink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=index.css.map */

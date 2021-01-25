@@ -1,0 +1,276 @@
+$desktop-width: 1024px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+      @content;
+    }
+}
+
+* {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+.navBox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 25px;
+
+    img {
+        height: 30px;
+    }
+}
+
+#navLinks {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    text-align: center;
+
+    ul {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        font-size: 2em;
+    }
+
+    a:hover {
+        color: grey;
+    }
+
+    svg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 1em;
+    }
+
+    @include desktop {
+        display: flex;
+        height: fit-content;
+
+        ul {
+            height: fit-content;
+            padding: 1em 0;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+.container {
+	animation: backgroundBreath 30s ease-in-out infinite alternate;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Text', serif;
+    text-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 3em;
+
+        @include desktop {
+            font-size: 4em;
+        }
+    }
+}
+
+.hideDesktop {
+    @include desktop {
+        display: none;
+    }
+}
+
+.fadeIn {
+    opacity: 0;
+
+    animation-name: fadeIn;
+    animation-timing-function: ease-out;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.landing {
+    .title {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+
+        h1 {
+            padding-top: 5em;
+            width: 40%;
+            text-align: right;
+
+            @include desktop {
+                width: 50%;
+            }
+        }
+
+        #usecaseCycle {
+            text-align: left;
+            padding-left: 0.5em;
+            width: 60%;
+            opacity: 1;
+            transition: opacity 1s;
+
+            @include desktop {
+                width: 50%;
+            }
+        }
+    }
+
+    .content {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+.glassCard {
+    width: 80%;
+    text-align: justify;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 1em;
+    border-radius: 20px;
+
+    @include desktop {
+        width: 50%;
+    }
+}
+
+.hide {
+    opacity: 0 !important;
+}
+
+.contact {
+    h1 {
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        height: 70vh;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+
+        input, select, textarea {
+            height: 10%;
+            margin: 1em 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            border: none;
+            color: white;
+        }
+
+        option {
+            color: black;
+        }
+
+        textarea {
+            height: 20%;
+        }
+
+        label {
+            margin-top: 1em;
+        }
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes backgroundBreath {
+    from {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    to {
+        background-color: rgba(63, 82, 105, 0.2);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeBlink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

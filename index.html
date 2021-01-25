@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+
+    <!--  FONTS  -->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
+
+
+    <title>Example Web Page</title>
+</head>
+<body>
+
+    <div class="navBox hideDesktop">
+        <img src="https://img.icons8.com/material/24/000000/menu--v4.png" onclick="toggleNavLinks()"/>
+    </div>
+
+    <div id="navLinks">
+        <svg onclick="toggleNavLinks()" class="hideDesktop" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="30" height="30"
+        viewBox="0 0 172 172"
+        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M40.90039,30.76628l-10.13411,10.13411l45.09961,45.09961l-45.09961,45.09961l10.13411,10.13411l45.09961,-45.09961l45.09961,45.09961l10.13411,-10.13411l-45.09961,-45.09961l45.09961,-45.09961l-10.13411,-10.13411l-45.09961,45.09961z"></path></g></g></svg>
+        <ul>
+            <li>
+                <a href="#landing" onclick="toggleNavLinks()">Landing</a>
+            </li>
+            <li>
+                <a href="#about" onclick="toggleNavLinks()">About</a>
+            </li>
+            <li>
+                <a href="#contact" onclick="toggleNavLinks()">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+
+        <section class="landing" id="landing">
+            <div class="title">
+                <h1>Your </h1>
+                <h1 id="usecaseCycle">Website</h1>
+            </div>
+
+            <div class="content">
+                <div class="glassCard fadeIn">
+                    <p>
+                        This is an example of some of the things I am capable of making, this page should serve as a reference point prior to purchasing any services with me to make sure you know what to expect of my services. This project contains only raw HTML, CSS and a little bit of Javascript; so it is not too advanced, but does serve its purpose of the displaying the general quality you can expect to receive from me.<br><br> Note: The rest of this page uses 'Lorem Ipsum' as placeholder text for reference.
+                    </p>
+                </div>
+            </div>
+        </section>
+    
+        <section class="about" id="about">
+            <h1>About...</h1>
+        </section>
+    
+        <section class="contact" id="contact">
+            <h1>Contact Me</h1>
+
+            <form action="mailto:padraicheaton@gmail.com" method="post" enctype="text/plain">
+            
+                <input type="text" name="Name" placeholder="Your Name Here...">
+                <label for="reason">Reason for Contacting:</label>
+                <select name="Contact Reason" id="reason">
+                    <option value="Commission Work">Commission Work</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                </select>
+                <textarea name="Description" placeholder="Description of Request Here..."></textarea>
+                <input type="submit" value="Send">
+
+            </form>
+        </section>
+
+    </div>
+    
+    <script>
+        // NavBar links toggle
+        const navLinksElement = document.getElementById("navLinks");
+
+        function toggleNavLinks() {
+            if (navLinksElement.style.display == "none" || navLinksElement.style.display == "") {
+                navLinksElement.style.display = "flex";
+            }
+            else if (window.innerWidth < 1024) {
+                navLinksElement.style.display = "none";
+            }
+        }
+
+
+        // Use Cases Cycle
+        const usecases = ["Portfolio", "Company", "Website", "Business", "Blog", "Brand"];
+        const usecaseElement = document.getElementById("usecaseCycle");
+
+        var usecaseIndex = 0;
+
+        setInterval(change, 5000);
+
+        function change() {
+            usecaseElement.classList.add("hide");
+            setTimeout(function () {
+                usecaseElement.innerHTML = usecases[usecaseIndex];
+                usecaseElement.classList.remove("hide");
+                usecaseIndex = (usecaseIndex < usecases.length - 1) ? usecaseIndex + 1 : 0;
+            }, 1000)
+        }
+    </script>
+</body>
+</html>
