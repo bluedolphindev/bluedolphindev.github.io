@@ -138,29 +138,26 @@ section {
     .title {
         display: flex;
         width: 100%;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
-        height: 50vh;
+        height: 40vh;
 
         h1 {
-            padding-top: 5em;
-            width: 40%;
-            text-align: right;
+            width: 50%;
+            text-align: center;
 
             @include desktop {
-                width: 50%;
+                text-align: right;
             }
         }
 
         #usecaseCycle {
             text-align: left;
-            padding-left: 0.5em;
-            width: 60%;
             opacity: 1;
             transition: opacity 1s;
 
             @include desktop {
-                width: 50%;
+                padding-left: 0.5em;
             }
         }
     }
@@ -189,6 +186,43 @@ section {
 
 .hide {
     opacity: 0 !important;
+}
+
+.about {
+    h1 {
+        height: 20vh;
+    }
+
+    .gridContainer {
+        height: 80vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        justify-items: center;
+        align-items: start;
+    }
+
+    .infoCell {
+        height: 30vh;
+        text-align: center;
+
+        h3 {
+            padding-bottom: 0.5em;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 80%;
+            border-radius: 15px;
+        }
+
+        ul {
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
 }
 
 .contact {
